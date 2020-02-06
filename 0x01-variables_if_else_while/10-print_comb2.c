@@ -10,7 +10,7 @@ int main(void)
 	int first;
 	int second;
 
-	for (n = 0; n < 99; n++)
+	for (n = 0; n <= 99; n++)
 	{
 		first = n / 10;
 		second = n % 10;
