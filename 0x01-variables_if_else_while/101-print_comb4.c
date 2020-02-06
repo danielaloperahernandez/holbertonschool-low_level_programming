@@ -11,11 +11,11 @@ int main(void)
 	int second;
 	int third;
 
-	for (n = 100; n < 999; n++)
+	for (n = 0; n < 999; n++)
 	{
 		first = n / 100;
 		second = (n / 10) % 10;
-		third = (n / 10);
+		third = (n % 10);
 		if (first < second && second < third)
 		{
 			putchar(first + '0');
