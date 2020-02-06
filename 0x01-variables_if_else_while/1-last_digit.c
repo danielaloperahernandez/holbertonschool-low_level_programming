@@ -1,4 +1,4 @@
-[2;2R[2;2Rstdlib.h>
+#include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
 /**
