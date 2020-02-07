@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
 * main - main block
-* print - prints all possible combinations of two two-digit numberS
+* print - prints all possible combinations of two two-digit numbers
 * Return: 0
 */
 int main(void)
@@ -21,16 +21,16 @@ int main(void)
 				{
 					if (one < three || one == three && two < four)
 					{
-						putchar(one + '0');
-						putchar(two + '0');
-						putchar(' ');
-						putchar(three + '0');
-						putchar(four + '0');
-						if (one != 9 || two != 8)
-						{
-							putchar(',');
-							putchar(' ');
-						}
+					putchar(one + '0');
+					putchar(two + '0');
+					putchar(' ');
+					putchar(three + '0');
+					putchar(four + '0');
+					if (one != 9 || two != 8)
+					{
+					putchar(',');
+					putchar(' ');
+					}
 					}
 				}
 			}
