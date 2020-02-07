@@ -16,7 +16,7 @@ int main(void)
 			{
 				for (four = 0; four <= 9; four++)
 				{
-					if (one < three || one == three && two < four)
+					if ((one < three) || (one == three && two < four))
 					{
 						putchar(one + '0');
 						putchar(two + '0');
