@@ -8,13 +8,13 @@ int main(void)
 	long int a = 0, b = 1, c = 1;
 	int i;
 
-	for (i = 0; i <= 50; i++)
+	for (i = 0; i <= 48; i++)
 	{
 		c = a + b;
 		a = b;
 		b = c;
-		printf("%li", c);
-		if (i < 50)
+		printf("%lli", c);
+		if (i < 48)
 			printf(", ");
 	}
 	printf("\n");
