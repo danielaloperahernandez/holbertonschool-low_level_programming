@@ -6,16 +6,17 @@
 int main(void)
 {
 	long int a = 0, b = 1, c = 1;
-	int i;
+	int i = 0;
 
-	for (i = 0; i <= 50; i++)
+	while (i <= 50)
 	{
 		c = a + b;
+		printf("%ld", c);
 		a = b;
 		b = c;
-		printf("%ld", c);
 		if (i < 50)
 			printf(", ");
+		i++;
 	}
 	printf("\n");
 	return (0);
