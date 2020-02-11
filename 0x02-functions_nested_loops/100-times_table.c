@@ -17,9 +17,9 @@ void print_times_table(int n)
 				if (column != 0)
 				{
 					_putchar(',');
+					_putchar(' ');
 					if ((row * column) <= 9)
 					{
-						_putchar(' ');
 						_putchar(' ');
 						_putchar(' ');
 						_putchar((row * column) + '0');
@@ -27,13 +27,11 @@ void print_times_table(int n)
 					else if ((row * column) <= 99)
 					{
 						_putchar(' ');
-						_putchar(' ');
 						_putchar(((row * column) / 10) + '0');
 						_putchar(((row * column) % 10) + '0');
 					}
 					else if ((row * column) <= 999)
 					{
-						_putchar(' ');
 						_putchar(((row * column) / 100) + '0');
 						_putchar((((row * column) / 10) % 10) + '0');
 						_putchar(((row * column) % 10) + '0');
