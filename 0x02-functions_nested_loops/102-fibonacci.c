@@ -11,7 +11,7 @@ int main(void)
 	while (i <= 50)
 	{
 		c = a + b;
-		printf("%li", c);
+		printf("%ld", c);
 		a = b;
 		b = c;
 		if (i < 50)
