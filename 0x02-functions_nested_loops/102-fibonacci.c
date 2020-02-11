@@ -8,13 +8,13 @@ int main(void)
 	long int a = 0, b = 1, c = 0;
 	int i = 0;
 
-	while (i <= 50)
+	while (i <= 49)
 	{
 		c = a + b;
 		printf("%ld", c);
 		a = b;
 		b = c;
-		if (i < 50)
+		if (i < 49)
 			printf(", ");
 		i++;
 	}
