@@ -5,13 +5,13 @@
  */
 int main(void)
 {
-	long int a = 0, b = 1, c = 1;
+	long int a = 0, b = 1, c = 0;
 	int i = 0;
 
 	while (i <= 50)
 	{
 		c = a + b;
-		printf("%ld", c);
+		printf("%li", c);
 		a = b;
 		b = c;
 		if (i < 50)
