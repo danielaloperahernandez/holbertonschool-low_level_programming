@@ -22,7 +22,7 @@ void print_times_table(int n)
 						_putchar(' ');
 						_putchar(' ');
 						_putchar(' ');
-						_putchar((row * column) + '0')
+						_putchar((row * column) + '0');
 					}
 					else if ((row * column) <= 99)
 					{
