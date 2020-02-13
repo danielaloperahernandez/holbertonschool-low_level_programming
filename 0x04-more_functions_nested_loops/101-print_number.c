@@ -35,6 +35,6 @@ void print_number(int n)
 			powten /= 10;
 		}
 	}
-	else
-		_putchar('0');
+	else	
+		_putchar(n + '0');
 }
