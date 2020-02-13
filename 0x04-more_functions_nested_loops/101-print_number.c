@@ -9,7 +9,7 @@ void print_number(int n)
 	int len, powten, i, digit, num;
 
 	if (n == 0)
-		_putchar('0');
+		_putchar(n + 48);
 	else
 	{
 		if (n < 0)
