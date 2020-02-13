@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
 * print_number - function that prints an integer
-* @n:qinteger
+* @n: integer to print
 * Descriptions: prints digit with _putchar
 */
 void print_number(int n)
