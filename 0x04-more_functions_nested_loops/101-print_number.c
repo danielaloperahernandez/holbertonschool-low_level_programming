@@ -13,7 +13,6 @@ void print_number(int n)
 		if (n < 0)
 		{
 			_putchar('-');
-			n *= -1;
 		}
 		num = n;
 		len = 0;
@@ -30,11 +29,14 @@ void print_number(int n)
 		for (i = 1; i <= len; i++)
 		{
 			digit = n / powten;
-			_putchar(digit + 48);
+			if (n < 0)
+				_putchar((digit * -1) + 48);
+			else
+				_putchar(digit + '0');
 			n -= digit * powten;
 			powten /= 10;
 		}
 	}
-	else	
-		_putchar(n + '0');
+	else
+		_putchar('0');
 }
