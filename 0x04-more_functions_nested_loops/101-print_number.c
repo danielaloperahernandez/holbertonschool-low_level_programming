@@ -14,29 +14,29 @@ void print_number(int n)
 		_putchar('0');
 	else
 	{
-	len = 0;
-	while (num != 0)
-	{
-		num /= 10;
-		len++;
-	}
-	powten = 1;
-	for (i = 1; i <= len - 1; i++)
-	{
-		powten *= 10;
-	}
-	for (i = 1; i <= len; i++)
-	{
-		digit = n / powten;
-		if (n < 0)
+		len = 0;
+		while (num != 0)
 		{
-			_putchar('-');
-			_putchar((digit * -1) + 48);
+			num /= 10;
+			len++;
 		}
-		else
-		_putchar(digit + 48);
-		n -= digit * powten;
-		powten /= 10;
-	}
+		powten = 1;
+		for (i = 1; i <= len - 1; i++)
+		{
+			powten *= 10;
+		}
+		for (i = 1; i <= len; i++)
+		{
+			digit = n / powten;
+			if (n < 0)
+			{
+				_putchar('-');
+				_putchar((digit * -1) + 48);
+			}
+			else
+				_putchar(digit + 48);
+			n -= digit * powten;
+			powten /= 10;
+		}
 	}
 }
