@@ -9,9 +9,11 @@ void print_number(int n)
 	int len, powten, i, digit, num;
 
 	num = n;
-	
+
 	if (n == 0)
 		_putchar('0');
+	else
+	{
 	len = 0;
 	while (num != 0)
 	{
@@ -35,5 +37,6 @@ void print_number(int n)
 		_putchar(digit + 48);
 		n -= digit * powten;
 		powten /= 10;
+	}
 	}
 }
