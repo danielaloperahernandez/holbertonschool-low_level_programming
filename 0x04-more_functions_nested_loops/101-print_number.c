@@ -8,17 +8,15 @@ void print_number(int n)
 {
 	int len, powten, i, digit, num;
 
-	if (n == 0)
-		_putchar(n + 48);
-	else
+	if (n != 0)
 	{
 		if (n < 0)
 		{
-			n *= -1;
 			_putchar('-');
+			n *= -1;
 		}
-		len = 0;
 		num = n;
+		len = 0;
 		while (num != 0)
 		{
 			num /= 10;
@@ -37,4 +35,6 @@ void print_number(int n)
 			powten /= 10;
 		}
 	}
+	else
+		_putchar ('0')
 }
