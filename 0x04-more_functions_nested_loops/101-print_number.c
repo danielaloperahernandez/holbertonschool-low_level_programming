@@ -25,16 +25,15 @@ void print_number(int n)
 		{
 			powten *= 10;
 		}
+		if (n < 0)
+		{
+			_putchar('-');
+			n *= -1;
+		}
 		for (i = 1; i <= len; i++)
 		{
 			digit = n / powten;
-			if (n < 0)
-			{
-				_putchar('-');
-				_putchar((digit * -1) + 48);
-			}
-			else
-				_putchar(digit + 48);
+			_putchar(digit + 48);
 			n -= digit * powten;
 			powten /= 10;
 		}
