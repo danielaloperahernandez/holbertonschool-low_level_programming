@@ -10,7 +10,7 @@ void print_number(int n)
 
 	num = n;
 	if (n == 0)
-		_putchar('0');
+		_putchar(48);
 	else
 	{
 		len = 0;
@@ -32,7 +32,7 @@ void print_number(int n)
 		for (i = 1; i <= len; i++)
 		{
 			digit = n / powten;
-			_putchar(digit + '0');
+			_putchar(digit + 48);
 			n -= digit * powten;
 			powten /= 10;
 		}
