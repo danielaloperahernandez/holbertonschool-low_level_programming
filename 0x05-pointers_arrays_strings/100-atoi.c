@@ -7,34 +7,23 @@
 
 int _atoi(char *s)
 {
-	char conv;
-	int sign, num, cont;
+	char let;
+	int sign, num;
 
-	conv = *s;
 	sign = 1;
 	num = 0;
 
-	while (conv != '\0' && (conv < '0' || conv > '9'))
+	while ((let = *s) != '\0' && (let < '0' || let > '9'))
 	{
-		if (conv == '-')
-		{
+		if (let == '-')
 			sign *= -1;
-			s++;
-		}
-		else
-			s++;
+		++s;
 	}
-	while (conv != '\0' && (conv >= '0' && conv <= '9'))
+	while (let >= '0' && let <= '9')
 	{
-		cont = num;
 		num = num * 10;
-		num = num - (conv - '0');
-		conv = *(s++);
-		if (num > cont)
-		{
-			return (cont * -sign);
-			conv = *(s++);
-		}
+		num = num + (let - '0');
+		let = *(++s);
 	}
-	return (num * -sign);
+	return (num * sign);
 }
