@@ -20,8 +20,8 @@ int _atoi(char *s)
 	while (let >= '0' && let <= '9')
 	{
 		num = num * 10;
-		num = num + (let - '0');
+		num = num - (let - '0');
 		let = *(++s);
 	}
-	return (num * sign);
+	return (num * -sign);
 }
