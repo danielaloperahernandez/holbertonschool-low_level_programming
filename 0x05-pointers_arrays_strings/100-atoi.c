@@ -1,4 +1,3 @@
-#include "holberton.h"
 /**
 * _atoi - convert a string to an integer
 * @s: type string to converte
