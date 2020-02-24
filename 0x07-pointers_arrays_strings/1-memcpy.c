@@ -1,9 +1,10 @@
 #include "holberton.h"
 /**
-* memcpy - function that copies memory area 
+* _memcpy - function that copies memory area
 * @dest: target array
 * @src: array ti copy
 * @n: n bytes from memory
+* Return: dest
 */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
