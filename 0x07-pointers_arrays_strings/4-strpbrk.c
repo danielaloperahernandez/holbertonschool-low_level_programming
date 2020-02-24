@@ -1,11 +1,11 @@
-#include "holberton"
+#include "holberton.h"
 /**
-* _strspn - searches a string for any of a set of bytes
+* _strpbrk - searches a string for any of a set of bytes
 * @s: string s
 * @accept: string to search
 * Return: s
 */
-unsigned int _strspn(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
 	int i, j;
 
@@ -14,7 +14,7 @@ unsigned int _strspn(char *s, char *accept)
 		for (j = 0; accept[j]; j++)
 		{
 			if (s[i] == accept[j])
-				return (s[i]);
+				return (s + i);
 		}
 	}
 	return (0);
