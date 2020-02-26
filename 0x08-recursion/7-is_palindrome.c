@@ -21,7 +21,7 @@ int is_palindrome2(char *s, char *rev)
 {
 	if (*s != *rev)
 		return (0);
-	if (*s == *rev)
+	if (s >= rev)
 		return (1);
 	return (is_palindrome2(++s, --rev));
 }
