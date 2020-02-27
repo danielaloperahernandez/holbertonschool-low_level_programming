@@ -54,7 +54,7 @@ char *match(char *str3, char *tr1)
 *wildcmp - compares two strings take in account wildcards
 *@s: string to be compare
 *@t:string to be compare - wildcards
-*Return : if strings ares identicals 1 otherwise 0
+*Return: if strings ares identicals 1 otherwise 0
 */
 int wildcmp(char *s, char *t)
 {
