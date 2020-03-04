@@ -47,10 +47,10 @@ char **strtow(char *str)
 			;
 		if (str[i] == '\0')
 			break;
-		start = i - 1;
+		start = i;
 		for (; str[i] && str[i] != ' '; ++i)
 			;
-		end = i - 1;
+		end = i;
 		pt[j] = (char *) malloc((end - start  + 1) * sizeof(char));
 		if (pt[j] == NULL)
 		{
