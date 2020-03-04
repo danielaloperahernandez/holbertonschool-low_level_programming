@@ -13,12 +13,10 @@ int size(int c, char **v)
 	for (rec1 = 0; rec1 < c; rec1++)
 	{
 		for (rec2 = 0; v[rec1][rec2]; rec2++)
-		{
 			sz++;
-		}
-		sz++;
+		sz++;/*space for newline*/
 	}
-	sz++;
+	sz++;/*space for string terminator*/
 	return (sz);
 }
 /**
@@ -35,19 +33,14 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == 0)
 		return (NULL);
 	len = size(ac, av);
-	a = malloc(len * sizeof(char));
+	a = (char *) malloc(len * sizeof(char));
 	if (a == NULL)
 		return (NULL);
-	k = 0;
-	for (i = 1; i < ac; i++)
+	for (i = 1, k = 0; i < ac; i++, ++k)
 	{
-		for (j = 0; av[i][j]; j++)
-		{
+		for (j = 0; av[i][j]; j++, ++k)
 			a[k] = av[i][j];
-			k++;
-		}
 		a[k] = '\n';
-		k++;
 	}
 	a[k + 1] = '\0';
 	return (a);
