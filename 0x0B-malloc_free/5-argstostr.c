@@ -18,7 +18,6 @@ int size(int c, char **v)
 		}
 		sz = sz + 2;
 	}
-	sz++;
 	return (sz);
 }
 /**
