@@ -16,8 +16,9 @@ int size(int c, char **v)
 		{
 			sz++;
 		}
-		sz = sz + 2;
+		sz++;
 	}
+	sz++;
 	return (sz);
 }
 /**
@@ -50,7 +51,7 @@ char *argstostr(int ac, char **av)
 		}
 		a[k] = '\n';
 		k++;
-		a[k] = '\0';
 	}
+	a[k + 1] = '\0';
 	return (a);
 }
