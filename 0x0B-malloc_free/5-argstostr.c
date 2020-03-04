@@ -28,7 +28,7 @@ int size(int c, char **v)
 char *argstostr(int ac, char **av)
 {
 	char *a;
-	int i, j, k, len;
+	int i, j, k, len = 0;
 
 	if (ac == 0 || av == 0)
 		return (NULL);
@@ -36,9 +36,9 @@ char *argstostr(int ac, char **av)
 	a = (char *) malloc(len * sizeof(char));
 	if (a == NULL)
 		return (NULL);
-	for (i = 1, k = 0; i < ac; i++, ++k)
+	for (i = 1, k = 0; i < ac; ++i, ++k)
 	{
-		for (j = 0; av[i][j]; j++, ++k)
+		for (j = 0; av[i][j]; ++j, ++k)
 			a[k] = av[i][j];
 		a[k] = '\n';
 	}
