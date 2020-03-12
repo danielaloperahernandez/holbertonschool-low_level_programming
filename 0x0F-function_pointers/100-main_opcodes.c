@@ -24,11 +24,11 @@ int main(int argc, char *argv[])
 	if (nbytes == 0)
 	{
 		putchar('\n');
-		exit(EXIT_SUCCESS);
+		return (0);
 	}
 	printf("%02x", *((unsigned char *)(main)));
 	for (i = 1; i < nbytes; ++i)
 		printf("%02x", *((unsigned char *)(main + i)));
 	putchar('\n');
-	exit(EXIT_SUCCESS);
+	return (0);
 }
