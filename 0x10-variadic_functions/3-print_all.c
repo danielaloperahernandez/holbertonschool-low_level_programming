@@ -14,34 +14,38 @@ void print_all(const char * const format, ...)
 	char *s;
 
 	va_start(ap, format);
-	while (format[i])
+
+	while (format && format[i])
 	{
-		band = 1;
-		switch (format[i++])
+		while (format[i])
 		{
-			case 'c':
-				printf("%c", va_arg(ap, int));
-				break;
-			case 'i':
-				printf("%d", va_arg(ap, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(ap, double));
-				break;
-			case 's':
-				s = va_arg(ap, char *);
-				if (s == NULL)
-					printf("(nil)");
-				else
-					printf("%s", s);
-				break;
-			default:
-				band = 0;
-				continue;
+			band = 1;
+			switch (format[i++])
+			{
+				case 'c':
+					printf("%c", va_arg(ap, int));
+					break;
+				case 'i':
+					printf("%d", va_arg(ap, int));
+					break;
+				case 'f':
+					printf("%f", va_arg(ap, double));
+					break;
+				case 's':
+					s = va_arg(ap, char *);
+					if (s == NULL)
+						printf("(nil)");
+					else
+						printf("%s", s);
+					break;
+				default:
+					band = 0;
+					continue;
+			}
+			if (format[i] && band == 1)
+				printf(", ");
 		}
-		if (format[i] && band == 1)
-			printf(", ");
 	}
-	putchar('\n');
-	va_end(ap);
+		putchar('\n');
+		va_end(ap);
 }
