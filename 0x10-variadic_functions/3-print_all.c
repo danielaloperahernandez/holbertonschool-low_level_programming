@@ -4,13 +4,11 @@
 /**
 *print_all - write a function that prints anything
 *@format: format string
-*
 */
 void print_all(const char * const format, ...)
 {
 	va_list ap;
 	unsigned int i = 0;
-	int band = 0;
 	char *s;
 
 	va_start(ap, format);
@@ -19,7 +17,6 @@ void print_all(const char * const format, ...)
 	{
 		while (format[i])
 		{
-			band = 1;
 			switch (format[i++])
 			{
 				case 'c':
@@ -39,13 +36,12 @@ void print_all(const char * const format, ...)
 						printf("%s", s);
 					break;
 				default:
-					band = 0;
 					continue;
 			}
-			if (format[i] && band == 1)
+			if (format[i])
 				printf(", ");
 		}
 	}
-		putchar('\n');
-		va_end(ap);
+	putchar('\n');
+	va_end(ap);
 }
