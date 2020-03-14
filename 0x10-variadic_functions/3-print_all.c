@@ -31,9 +31,8 @@ void print_all(const char * const format, ...)
 				case 's':
 					s = va_arg(ap, char *);
 					if (s == NULL)
-						printf("(nil)");
-					else
-						printf("%s", s);
+						s = "(nil)";
+					printf("%s", s);
 					break;
 				default:
 					continue;
