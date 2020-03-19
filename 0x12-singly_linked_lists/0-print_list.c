@@ -1,5 +1,5 @@
-#include "list.h"
 #include <stdio.h>
+#include "lists.h"
 /**
 *print_list - print string and length of string for each element of 'h'
 *@h: pointer to first element of list
