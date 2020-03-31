@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 {
 	char *file_from, *file_to;
 	char buf[NBYTES];
-	ssize_t r;
+	ssize_t r = 0, w = 0;
 	int fdr, fdw;
 
 	if (argc != 3)
@@ -39,8 +39,20 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-	while ((r = read(fdr, buf, NBYTES)))
-		write(fdw, buf, r);
+	do {
+		r = read(fdr, buf, NBYTES);
+		if (r == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			exit(98);
+		}
+		w = write(fdw, buf, r);
+		if (w != r)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+			exit(99);
+		}
+	} while (r);
 	if (close(fdw))
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdw);
