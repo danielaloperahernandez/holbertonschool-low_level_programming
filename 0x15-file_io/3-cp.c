@@ -1,10 +1,4 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#define NBYTES 1024
+#include "holberton.h"
 /**
  * main - copy content of one file into another
  * @argc: count of arguments
@@ -46,11 +40,14 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			exit(98);
 		}
-		w = write(fdw, buf, r);
-		if (w != r)
+		if (r)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-			exit(99);
+			w = write(fdw, buf, r);
+			if (w != r)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+				exit(99);
+			}
 		}
 	} while (r);
 	if (close(fdw))
