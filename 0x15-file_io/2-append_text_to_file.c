@@ -1,6 +1,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fcnt1.h>
+#include <fcntl.h>
 #include <unistd.h>
 /**
 *append_text_to_file - appends text at the end of a file.
@@ -14,15 +14,18 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	fd = open(filename, O_APPEND | O_WRONLY)
+	fd = open(filename, O_APPEND | O_WRONLY);
 	if (fd == -1)
 		return (-1);
 	for (size = 0; text_content && text_content[size]; size++)
 		;
-	if (write(fd, text_content, size) != size)
+	if (size)
 	{
-		close(fd);
-		return (-1);
+		if (write(fd, text_content, size) != size)
+		{
+			close(fd);
+			return (-1);
+		}
 	}
 	close(fd);
 	return (1);
