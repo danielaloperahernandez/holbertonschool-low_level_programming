@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * delete_dnodeint_at_index - function that deletes a new node
- *								at a given position
+ *							at a given position
  * @head: double pointer to a double linked list
  * @index: index of the node that should be deleted.
  *			Index starts at 0
@@ -25,19 +25,15 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	while (aux->next && count != index)
 	{
 		if (count == index)
-			break;
+		{
+			aux->prev->next = aux->next;
+			if (aux->next != NULL)
+				aux->next->prev = aux->prev;
+			free(aux);
+			return (1);
+		}
 		aux = aux->next;
 		count++;
 	}
-	if (index != count)
-		return (-1);
-	if (aux->next == NULL)
-		aux->prev->next = NULL;
-	else
-	{
-		aux->prev->next = aux->next;
-		aux->next->prev = aux->prev;
-	}
-	free(aux);
-	return (1);
+	return (-1);
 }
