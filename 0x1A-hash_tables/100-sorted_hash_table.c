@@ -2,10 +2,10 @@
 
 /**
  * sorted_list - function for insert new node in sorted
+ * @ht: pointer to sorted hash table
  * @new_node: pew node to insert
  *
  */
-
 void sorted_list(shash_table_t *ht, shash_node_t *new_node)
 {
 	shash_node_t *sbucket = ht->shead;
@@ -43,7 +43,6 @@ void sorted_list(shash_table_t *ht, shash_node_t *new_node)
  *
  * Return: pointer to hash table
  */
-
 shash_table_t *shash_table_create(unsigned long int size)
 {
 	shash_table_t *table;
@@ -120,7 +119,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  *
  * Return: value or NULL if key does not exit.
  */
-
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	unsigned long int index = 0;
