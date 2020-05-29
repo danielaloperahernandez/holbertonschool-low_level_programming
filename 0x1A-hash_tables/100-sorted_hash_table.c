@@ -106,10 +106,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	keycopy = strdup(key);
 	if (!keycopy)
-	{
-		free(valuecopy);
 		return (0);
-	}
 	new_node->key = keycopy;
 	new_node->value = valuecopy;
 	new_node->next = ht->array[index];
@@ -117,7 +114,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	sorted_list(ht, new_node);
 	return (1);
 }
-
 /**
  * shash_table_get - function to retrieve value associeted with key
  * @ht: pointer to hash table
