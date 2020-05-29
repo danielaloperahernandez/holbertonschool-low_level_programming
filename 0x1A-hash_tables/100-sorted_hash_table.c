@@ -81,11 +81,9 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 	if (!ht || !key || !*key || !value)
 		return (0);
-
 	valuecopy = strdup(value);
 	if (!valuecopy)
 		return (0);
-
 	index = key_index((const unsigned char *)key, ht->size);
 	bucket = ht->array[index];
 
@@ -130,10 +128,8 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 
 	if (!ht || !key || !*key)
 		return (NULL);
-
 	index = key_index((const unsigned char *)key, ht->size);
 	bucket = ht->array[index];
-
 	while (bucket)
 	{
 		if (!strcmp(key, bucket->key))
@@ -153,12 +149,9 @@ void shash_table_print(const shash_table_t *ht)
 	shash_node_t *bucket;
 	int not_fin = 0;
 
-
 	if (!ht)
 		return;
-
 	bucket = ht->shead;
-
 	printf("{");
 	while (bucket)
 	{
@@ -180,12 +173,9 @@ void shash_table_print_rev(const shash_table_t *ht)
 	shash_node_t *bucket;
 	int not_fin = 0;
 
-
 	if (!ht)
 		return;
-
 	bucket = ht->stail;
-
 	printf("{");
 	while (bucket)
 	{
