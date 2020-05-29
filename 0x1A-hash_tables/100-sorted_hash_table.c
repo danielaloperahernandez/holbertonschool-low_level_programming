@@ -1,34 +1,6 @@
 #include "hash_tables.h"
 
 /**
- * shash_table_create - creates a sorted hash tables
- * @size: size of the hash table
- *
- * Return: pointer to hash table
- */
-
-shash_table_t *shash_table_create(unsigned long int size)
-{
-	shash_table_t *table;
-
-	if (size == 0)
-		return (NULL);
-
-	table = calloc(1, sizeof(shash_table_t));
-	if (table == NULL)
-		return (NULL);
-
-	table->size = size;
-	table->array = calloc(size, sizeof(shash_node_t *));
-	if (table->array == NULL)
-	{
-		free(table);
-		return (NULL);
-	}
-	return (table);
-}
-
-/**
  * sorted_list - function for insert new node in sorted
  * @new_node: pew node to insert
  *
@@ -64,6 +36,35 @@ void sorted_list(shash_table_t *ht, shash_node_t *new_node)
 	ht->stail->snext = new_node;
 	ht->stail = new_node;
 }
+
+/**
+ * shash_table_create - creates a sorted hash tables
+ * @size: size of the hash table
+ *
+ * Return: pointer to hash table
+ */
+
+shash_table_t *shash_table_create(unsigned long int size)
+{
+	shash_table_t *table;
+
+	if (size == 0)
+		return (NULL);
+
+	table = calloc(1, sizeof(shash_table_t));
+	if (table == NULL)
+		return (NULL);
+
+	table->size = size;
+	table->array = calloc(size, sizeof(shash_node_t *));
+	if (table->array == NULL)
+	{
+		free(table);
+		return (NULL);
+	}
+	return (table);
+}
+
 /**
  * shash_table_set - function that adds an element to the sorted hash table
  * @ht: pointer to sorted hash table
@@ -196,7 +197,6 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
-
 /**
  * shash_table_delete - free hash table and all nodes
  * @ht: pointer to hash table
