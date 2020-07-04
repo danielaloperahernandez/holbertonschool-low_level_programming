@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""Module for the island_perimeter method"""
+
+
 def island_perimeter(grid):
+    """methos for calculate island perimeter"""
     max_col = len(grid[0])
     max_row = len(grid)
     perimeter = 0
